@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  padding: 25px;
+  background-color: crimson;
+  color: white;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color:pink ;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<h2>Cake Castle :)</h2>
+<p>Click the button to toggle between crimson and pink coloured backgrounds.</p>
+
+<button onclick="myFunction()">CHANGE BACKGROUND COLOUR</button>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */'
+  transform: rotate(90deg);  
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<h2>Cake Menu</h2>
+<p>Click on the arrow(s) to open or close the menu which shows different flavours of yummy cakes !!.</p>
+
+<ul id="myUL">
+  <li><span class="caret">Cakes Themes</span>
+    <ul class="nested">
+      <li></li>
+      <li>Butterfly</li>
+      <li><span class="caret">Princess</span>
+        <ul class="nested">
+          <li>Snow white</li>
+          <li>Cindrella</li>
+          <li><span class="caret">Barbie</span>
+            <ul class="nested">
+              <li>Chocolate</li>
+              <li>Vanilla</li>
+              <li>Pineapple</li>
+              <li>Strawberry</li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+    </ul>
+  </li>
+</ul>
+
+<script>
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+
+</body>
+</html>
+
+
